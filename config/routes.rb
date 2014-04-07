@@ -2,6 +2,13 @@ Blog::Application.routes.draw do
   devise_for :users
   resources :posts
 
+  #get '/users/sign_out', to: 'devise/sessions#destroy', as: :signout
+
+  devise_scope :user do
+    get 'signup', to: 'devise/registrations#new'
+    get 'signin', to: 'devise/sessions#new'
+    get 'signout', to: 'devise/sessions#destroy'
+  end
   #resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
