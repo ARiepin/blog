@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation" >
-      <div class="nav navbar-nav navbar-inner">
-        <div class="container">
+<header class="navbar navbar-fixed-top navbar-inverse" >
+      <div class="navbar-inner">
+        <div class="container-fluid">
           <%= link_to "Strange Blog", root_path, id: "logo" %>
           <nav>
           	<p class="navbar-text">В поисках потерянного разума...</p>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav pull-right">
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", signout_path %></li>
               <% else %>
